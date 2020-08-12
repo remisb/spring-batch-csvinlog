@@ -49,7 +49,7 @@ public class BatchConfig {
 
     @Bean
     public Job logLinesJob(JobCompletionNotificationListener listener, Step step1) {
-        return jobs.get("step1")
+        return jobs.get("job1")
                 .incrementer(new RunIdIncrementer())
                 .listener(listener)
                 .flow(step1)
