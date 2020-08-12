@@ -20,7 +20,7 @@ public class LineItemProcessor implements ItemProcessor<Line, Line>, StepExecuti
         final LocalDate dob = line.getDob();
         final Line newLine = new Line(name, dob);
 
-        long age = ChronoUnit.YEARS.between(line.getDob(), LocalDate.now());
+        Long age = ChronoUnit.YEARS.between(line.getDob(), LocalDate.now());
         log.debug("Calculated age " + age + " for line " + line.toString());
         newLine.setAge(age);
         return line;
